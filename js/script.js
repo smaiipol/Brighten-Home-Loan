@@ -26,6 +26,14 @@ jQuery(document).ready(function($){
 		$(this).find('.faq-block-text').slideToggle();
 	})
 	/*------------ Faq section End --------------*/
+
+	/*------------ Fixbar Start ------------*/
+	$('.fixed-bar li').click(function(event) {
+		var index = $(this).index();
+		$('html,body').stop(true);
+		$('html,body').animate({scrollTop: $('.editor-col-2 .right h3').eq(index).offset().top}, 300);
+	});
+	/*------------ Fixbar End --------------*/
 })
 
 jQuery(window).scroll(function(event) {
@@ -37,6 +45,18 @@ jQuery(window).scroll(function(event) {
 		jQuery('header .nav').removeClass('bg-white');
 	}
 	/*------------ Header BG End --------------*/
+
+	/*------------ Fixbar Start ------------*/
+	// jQuery('section').each(function(){
+	// 	var iThisOffsetTop = jQuery(this).offset().top;
+	// 	var iWindowHeight = jQuery(window).height();
+	// 	var iThisTop = iThisOffsetTop - iWindowScrollTop;
+	// 	if (iThisTop >=0 && iThisTop < iWindowHeight / 2 ) {
+	// 		jQuery('section').removeClass('current');
+	// 		jQuery(this).addClass('current');
+	// 	}
+	// })
+	/*------------ Fixbar End --------------*/
 });
 
 /*------------ Disable Touch Event Start ------------*/
